@@ -1,0 +1,28 @@
+{
+    "name": "omnidocs/sphinx",
+    "type": "library",
+    "description": "Omnidocs Sphinx: a Sphinx manual as an omnidocs manual, from the JSON builder's output (sphinx-build -b json) and its objects.inv - pages in the toctrees' order, admonitions and versionadded as callouts, highlighted code in frames, the API entries at their anchors with their signatures.",
+    "keywords": ["documentation", "sphinx", "restructuredtext", "objects.inv", "intersphinx", "omnidocs"],
+    "homepage": "https://github.com/glitchr-studio/omnidocs-sphinx",
+    "license": "MIT",
+    "authors": [{"name": "Marco Meyer", "email": "marco.meyer@glitchr.io"}],
+    "require": {
+        "php": ">=8.2",
+        "ext-zlib": "*",
+        "omniscient/omnidocs": "^1.0@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {"Omnidocs\\Sphinx\\": ""},
+        "exclude-from-classmap": ["/Tests/"]
+    },
+    "autoload-dev": {
+        "psr-4": {"Omnidocs\\Sphinx\\Tests\\": "Tests/"}
+    },
+    "extra": {
+        "branch-alias": {"dev-1.x": "1.x-dev"}
+    },
+    "config": {"sort-packages": true}
+}

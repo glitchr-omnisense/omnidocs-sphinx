@@ -1,6 +1,6 @@
 # omnidocs/sphinx
 
-A Sphinx manual as an [omnidocs](https://github.com/glitchr-studio/omnidocs) manual, from its JSON
+A Sphinx manual as an [omnidocs](https://github.com/glitchr-omnisense/omnidocs) manual, from its JSON
 builder's output (`sphinx-build -b json docs out`) and its objects.inv:
 
 - a page per document, in the order the root document's toctrees give (each document's "next");

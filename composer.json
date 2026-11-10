@@ -12,6 +12,7 @@
         "omnisense/omnidocs": "^1.0@dev"
     },
     "require-dev": {
+        "omnisense/contracts": "^1.0@dev",
         "phpunit/phpunit": "^11.0"
     },
     "autoload": {
@@ -22,6 +23,7 @@
         "psr-4": {"Omnidocs\\Sphinx\\Tests\\": "Tests/"}
     },
     "extra": {
+        "omnisense": {"policy": "policy.json"},
         "branch-alias": {"dev-1.x": "1.x-dev"}
     },
     "config": {"sort-packages": true}

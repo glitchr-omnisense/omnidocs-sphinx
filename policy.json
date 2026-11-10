@@ -1,0 +1,38 @@
+{
+    "$schema": "https://github.com/glitchr-omnisense/contracts/blob/1.x/resources/usage-policy.schema.json",
+    "provider": "sphinx",
+    "rateLimits": [],
+    "concurrency": null,
+    "rights": {
+        "commercial": "allowed",
+        "openSourceRequired": false,
+        "caching": {
+            "permission": "allowed",
+            "maxTtl": null
+        },
+        "storage": "allowed",
+        "redistribution": "allowed",
+        "attribution": {
+            "required": false,
+            "text": null,
+            "url": null,
+            "where": []
+        },
+        "licence": null
+    },
+    "requirements": {
+        "key": false,
+        "userAgent": {
+            "required": false,
+            "pattern": null
+        }
+    },
+    "provenance": {
+        "terms": "https://github.com/sphinx-doc/sphinx/blob/master/LICENSE.rst",
+        "policy": null,
+        "verifiedAt": "2026-11-10",
+        "declaredBy": "maintainer",
+        "contact": null,
+        "notes": "No third party: the source reads files that already exist (a checkout, a build's output) and never reaches the network nor runs a tool, so there is no rate limit ([]) and no key. The licence of what it reads is the documented project's own (licence null here): the site publishing a manual answers for it. It reads the output of Sphinx's JSON builder and its objects.inv, which the site builds itself: Sphinx is BSD-2-Clause (its LICENSE.rst), the output is the project's own documentation."
+    }
+}

@@ -12,6 +12,38 @@ builder's output (`sphinx-build -b json docs out`) and its objects.inv:
 - the inventory's entries (py:function, py:class, py:method... - not its std: labels) are the API
   entries, at their anchors, with their signature and first sentence read in the page.
 
+## Installation and a first use
+
+```sh
+composer require omnidocs/sphinx
+```
+
+It reads what Sphinx's JSON builder writes (`sphinx-build -b json docs out`, with its `objects.inv`).
+Sphinx runs on Python and is the documented project's tool, not a dependency: the package needs PHP
+8.2 with ext-zlib, no network, no account. To try it without Sphinx, read the output of Requests'
+documentation its tests use, installed with it:
+
+```php
+require __DIR__.'/vendor/autoload.php';
+
+use Omnidocs\Model\Version;
+use Omnidocs\Sphinx\SphinxSourceFactory;
+
+$source = (new SphinxSourceFactory())->create(['dir' => __DIR__.'/vendor/omnidocs/sphinx/Tests/Fixtures/requests']);
+$version = new Version('2.32', $source);
+foreach ($version->pages() as $node) {
+    echo $node->title, "\n";
+}
+echo count($version->symbols()), " API entries\n";
+```
+
+Its tests (`composer install` then `vendor/bin/phpunit` in a checkout, or every package at once in
+[omnidocs' Docker harness](https://github.com/glitchr-omnisense/omnidocs/blob/1.x/docs/harness.md))
+read that committed output: Python and Sphinx are not needed to run them. The harness's `sphinx`
+service regenerates the whole of it with Sphinx 8.1.3.
+
+With a project's own output:
+
 ```php
 $manual = (new Omnidocs\Sphinx\SphinxSourceFactory())->create(['dir' => 'build/json', 'docs' => 'docs']);
 ```

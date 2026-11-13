@@ -9,10 +9,10 @@
     "require": {
         "php": ">=8.2",
         "ext-zlib": "*",
-        "omnisense/omnidocs": "^1.0@dev"
+        "omnisense/omnidocs": "^1.0"
     },
     "require-dev": {
-        "omnisense/contracts": "^1.0@dev",
+        "omnisense/contracts": "^1.0",
         "phpunit/phpunit": "^11.0"
     },
     "autoload": {
